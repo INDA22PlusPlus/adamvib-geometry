@@ -29,19 +29,23 @@ def is_counter_clockwise(p1, p2, p3):
     cross_product = (p2[0] - p1[0]) * (p3[1] - p1[1]) - (p2[1] - p1[1]) * (p3[0] - p1[0])
     return cross_product > 0
 
-while True:
-    n = int(sys.stdin.readline())
+def main():
+    while True:
+        n = int(sys.stdin.readline())
 
-    if n == 0:
-        break
+        if n == 0:
+            break
 
-    points = []
-    for i in range(n):
-        x, y = map(int, sys.stdin.readline().split())
-        points.append((x, y))
-    
-    polygon = graham_scan(points)
-    print(len(polygon))
+        points = []
+        for i in range(n):
+            x, y = map(int, sys.stdin.readline().split())
+            points.append((x, y))
+        
+        polygon = graham_scan(points)
+        print(len(polygon))
 
-    for i in range(len(polygon)):
-        print(polygon[i][0], polygon[i][1], sep=' ')
+        for i in range(len(polygon)):
+            print(polygon[i][0], polygon[i][1], sep=' ')
+
+if __name__ == '__main__':
+    main()
