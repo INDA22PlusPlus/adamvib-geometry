@@ -1,4 +1,4 @@
-# https://kth.kattis.com/problems/pointinpolygon?editsubmit=10115406
+# https://kth.kattis.com/problems/pointinpolygon
 
 import itertools
 import sys
@@ -40,7 +40,6 @@ def main():
             intersections = 0
             for i, z in zip(range(n), itertools.chain(range(1, n), [0])):
                 if left(point, far_right_point, polygon[i]) != left(point, far_right_point, polygon[z]) and left(polygon[i], polygon[z], point) != left(polygon[i], polygon[z], far_right_point):
-                    if left(polygon[i], polygon[z], point) != left(polygon[i], polygon[z], far_right_point):
                         intersections += 1
 
             if intersections % 2 == 0:
